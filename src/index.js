@@ -64,7 +64,7 @@ const main = async () => {
 }
 
 // 每天晚上8点消息提醒
-const job = schedule.scheduleJob('20 * * *', async function () {
+const job = schedule.scheduleJob('0 0 20 * * *', async function () {
     console.log(new Date(), "task starts")
     await main();
     console.log(new Date(), "task is over")

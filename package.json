@@ -6,6 +6,8 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.6",
-    "node-fetch": "^2.6.1"
+    "ding-robot": "^1.0.0",
+    "node-fetch": "^2.6.1",
+    "node-schedule": "^2.0.0"
   }
 }

@@ -2,6 +2,7 @@ const { zhihuFunc } = require("./zhihu")
 
 const listOfNewsSource = {
     weibo: {
+        text: "微博",
         url: "https://s.weibo.com/top/summary?cate=realtimehot",
         headers: {
             'Host': 's.weibo.com',
@@ -17,6 +18,7 @@ const listOfNewsSource = {
         fn: null
     },
     zhihu: {
+        text: "知乎",
         url: "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=100",
         headers: {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'

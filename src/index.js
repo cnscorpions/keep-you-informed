@@ -18,22 +18,30 @@ const fetchData = async (url, headers) => {
  * 从网页提取信息
  * @param {*} html 
  */
-const extractData = (html, rule) => {
+const extractData = (html, rule, fn) => {
     const $ = cheerio.load(html);
-    const nodeList = $(rule);
-    let arr = [];
-    nodeList.each(function (index, elem) {
-        arr[index] = $(this).text();
-      });
-    return arr
+    // 是否有解析规则
+    if (rule) {
+        const nodeList = $(rule);
+        let arr = [];
+        nodeList.each(function (index, elem) {
+            arr[index] = $(this).text();
+            });
+        return arr
+    } else {
+        if (fn) return fn(html)
+    }
 }
 
 (async () => {
     try {
-        const { url, headers, rule } = listOfNewsSource.weibo;
-        const html = await fetchData(url, headers)
-        const data = extractData(html, rule)
-        console.log(data)
+        // const { url, headers, rule }
+        for (let item of Object.keys(listOfNewsSource)) {
+            const { url, headers, rule, fn } = listOfNewsSource[item];
+            const html = await fetchData(url, headers)
+            const data = extractData(html, rule, fn);
+            console.log(item, data)
+        }
     } catch (error) {
         console.error(error)
     }

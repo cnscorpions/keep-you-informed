@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "node src/index.js",
+    "git": "git add . && git commit -m",
+    "postgit": "git pull && git push && git status"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "node-fetch": "^2.6.1"
+  }
+}

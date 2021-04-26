@@ -63,7 +63,7 @@ const main = async () => {
     }
 }
 
-// 每天晚上8点消息提醒
+// 默认每天20点整消息提醒
 const job = schedule.scheduleJob('0 0 20 * * *', async function () {
     console.log(new Date(), "task starts")
     await main();

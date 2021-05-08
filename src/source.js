@@ -1,4 +1,4 @@
-const { zhihuFunc } = require("./zhihu")
+const { parseZhihu, parseBilibili} = require("./custom-parse")
 
 const listOfNewsSource = {
     // weibo: {
@@ -21,10 +21,19 @@ const listOfNewsSource = {
         text: "知乎",
         url: "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=100",
         headers: {
-            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
         },
         rule: null,
-        fn: zhihuFunc
+        fn: parseZhihu
+    },
+    bilibili: {
+        text: "B站",
+        url: "http://s.search.bilibili.com/main/hotword",
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
+        },
+        rule: null,
+        fn: parseBilibili
     }
 }
 

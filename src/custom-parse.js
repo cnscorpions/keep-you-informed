@@ -46,8 +46,14 @@ function parseBaiduHot(param) {
     return topwords.map(item => item.keyword)
 }
 
+function parseGoogle(param) {
+    const { default: {trendingSearchesDays: { 0: {trendingSearches }}}} = JSON.parse(param)
+    return trendingSearches.map(item => item.title.query);
+}
+
 module.exports = {
     parseZhihu,
     parseBilibili,
-    parseBaiduHot
+    parseBaiduHot,
+    parseGoogle
 }

@@ -1,4 +1,4 @@
-const { parseZhihu, parseBilibili, parseBaiduHot } = require("./custom-parse")
+const { parseZhihu, parseBilibili, parseBaiduHot, parseGoogle } = require("./custom-parse")
 
 const listOfNewsSource = {
     // weibo: {
@@ -52,6 +52,15 @@ const listOfNewsSource = {
         },
         rule: null,
         fn: parseBaiduHot
+    },
+    google: {
+        text: "Google Daily Trends",
+        url: "https://trends.google.com/trends/api/dailytrends?hl=en-GB&tz=-480&geo=US&ns=15",
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
+        },
+        rule: null,
+        fn: parseGoogle
     }
 }
 

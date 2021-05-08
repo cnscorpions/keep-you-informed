@@ -6,7 +6,8 @@
 function parseZhihu(param) {
     const { data, detail_text} = JSON.parse(param)
     const postsData = data.map(item => item.target)
-    return postsData.map(item => item.title);
+    const render = ({ title, id }) => `${title} [↗️](https://www.zhihu.com/question/${id})`;
+    return postsData.map(item => render(item));
 }
 
 /**

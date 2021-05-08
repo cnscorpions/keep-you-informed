@@ -1,4 +1,4 @@
-const { parseZhihu, parseBilibili} = require("./custom-parse")
+const { parseZhihu, parseBilibili, parseBaiduHot } = require("./custom-parse")
 
 const listOfNewsSource = {
     // weibo: {
@@ -18,7 +18,7 @@ const listOfNewsSource = {
     //     fn: null
     // },
     zhihu: {
-        text: "知乎",
+        text: "知乎热榜",
         url: "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=100",
         headers: {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
@@ -27,13 +27,31 @@ const listOfNewsSource = {
         fn: parseZhihu
     },
     bilibili: {
-        text: "B站",
+        text: "B站热搜",
         url: "http://s.search.bilibili.com/main/hotword",
         headers: {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
         },
         rule: null,
         fn: parseBilibili
+    },
+    wechat: {
+        text: "微信24热文",
+        url: "https://tophub.today/n/WnBe01o371",
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
+        },
+        rule: "h4.weui-media-box__title",
+        fn: null
+    },
+    baidu: {
+        text: "百度实时热点",
+        url: "http://top.baidu.com/mobile_v2/buzz?b=1&c=515",
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
+        },
+        rule: null,
+        fn: parseBaiduHot
     }
 }
 

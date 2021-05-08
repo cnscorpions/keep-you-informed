@@ -41,9 +41,9 @@ yarn git -m *** or npm run git -m *** // *** 代表commit信息
 ## 信息源
 - [x] 知乎热榜
 - [x] B站热门搜索
-- [ ] ~~微博热榜~~（完全没有用的信息，）
-- [ ] 微信24h热文榜
+- [x] 微信24h热文榜
 - [ ] 百度实时热榜
+- [ ] ~~微博热榜~~（完全没有用的信息，）
 - [ ] Google Trends
 - [ ] Twitter Trends
 - [ ] Reddit Popular

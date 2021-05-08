@@ -36,7 +36,18 @@ function parseBilibili(param) {
     
 }
 
+/**
+ * 解析百度
+ * @param {*} param 
+ * @returns 
+ */
+function parseBaiduHot(param) {
+    const { result: { topwords } } = JSON.parse(param)
+    return topwords.map(item => item.keyword)
+}
+
 module.exports = {
     parseZhihu,
-    parseBilibili
+    parseBilibili,
+    parseBaiduHot
 }

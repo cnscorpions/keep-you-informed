@@ -39,10 +39,10 @@ yarn git -m *** or npm run git -m *** // *** 代表commit信息
 ```
 
 ## 信息源
-- [x] 微博热榜
 - [x] 知乎热榜
+- [ ] B站热门搜索
+- [ ] ~~微博热榜~~（完全没有用的信息，）
 - [ ] 微信24h热文榜
-- [ ] B站日榜
 - [ ] 百度实时热榜
 - [ ] Google Trends
 - [ ] Twitter Trends

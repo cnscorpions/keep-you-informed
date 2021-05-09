@@ -63,8 +63,15 @@ const main = async () => {
     }
 }
 
-// 默认每天8点整消息提醒
-const job = schedule.scheduleJob('0 0 8 * * *', async function () {
+// 默认每天北京时间，8点整消息提醒
+const rule = new schedule.RecurrenceRule();
+rule.hour = 10;
+rule.minute = 8;
+rule.tz = 'Asia/Shanghai';
+
+// '0 0 8 * * *'
+
+const job = schedule.scheduleJob(rule, async function () {
     console.log(new Date(), "task starts")
     await main();
     console.log(new Date(), "task is over")

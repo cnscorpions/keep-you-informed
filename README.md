@@ -53,7 +53,13 @@ yarn git -m *** or npm run git -m *** // *** 代表commit信息
 ```
 module.exports = {
     webhook: "https://oapi.dingtalk.com/robot/send?access_token=********",
-    access_token: "***************" // 需要先创建钉钉群机器人，获得access_token
+    access_token: "***************", // 需要先创建钉钉群机器人，获得access_token
+    time: {
+        tz: "Asia/Shanghai", // 时区
+        hour: 8,
+        minute: 0,
+        second: 0
+    }
 }
 ```
 

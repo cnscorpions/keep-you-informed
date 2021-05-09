@@ -3,6 +3,7 @@ const cheerio = require('cheerio')
 const schedule = require('node-schedule');
 const { sendMD } = require("./dingding")
 const { listOfNewsSource } = require("./source")
+const { time } = require("../config")
 
 /**
  * 获取数据
@@ -64,12 +65,12 @@ const main = async () => {
 }
 
 // 默认每天北京时间，8点整消息提醒
+const { hour, minute, second, tz } = time;
 const rule = new schedule.RecurrenceRule();
-rule.hour = 10;
-rule.minute = 8;
-rule.tz = 'Asia/Shanghai';
-
-// '0 0 8 * * *'
+rule.hour = hour || 8;
+rule.minute = minute || 0;
+rule.second = second || 0;
+rule.tz = tz || 'Asia/Shanghai';
 
 const job = schedule.scheduleJob(rule, async function () {
     console.log(new Date(), "task starts")

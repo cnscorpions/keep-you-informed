@@ -35,15 +35,17 @@ const listOfNewsSource = {
         rule: null,
         fn: parseBilibili
     },
-    wechat: {
-        text: "微信24热文",
-        url: "https://tophub.today/n/WnBe01o371",
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
-        },
-        rule: "h4.weui-media-box__title",
-        fn: null
-    },
+    // wechat: {
+    //     text: "微信24热文",
+    //     url: "https://tophub.today/n/WnBe01o371",
+    //     headers: {
+    //         'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' // iphoneX 
+    //     },
+    //     rule: "h4.weui-media-box__title",
+    //     fn: null,
+    //     start: 9,
+    //     end: 19
+    // },
     baidu: {
         text: "百度实时热点",
         url: "http://top.baidu.com/mobile_v2/buzz?b=1&c=515",

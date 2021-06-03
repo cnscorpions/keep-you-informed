@@ -46,13 +46,13 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const main = async () => {
     try {
         for (let item of Object.keys(listOfNewsSource)) {
-            const { text, url, headers, rule, fn } = listOfNewsSource[item];
+            const { text, url, headers, rule, fn, start = 0, end = 10 } = listOfNewsSource[item];
             const html = await fetchData(url, headers)
             const data = extractData(html, rule, fn);
             console.log(`${text}消息`, data)
             // 休眠500ms
             await sleep(500)
-            const newArr = data.slice(0, 10);
+            const newArr = data.slice(start, end);
             let str = `## ${text}榜单 \n`;
             newArr.forEach((el, index) => {
                 str +=`${index + 1}. ${el} \n`;

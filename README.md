@@ -1,4 +1,4 @@
-# trending-news-notifier
+# Keep You Informed
 爬取国内外trending news，集中通知，不用打开各个社交媒体
 
 ## 特征
@@ -40,12 +40,12 @@ yarn git -m *** or npm run git -m *** // *** 代表commit信息
 
 ## 信息源
 - [x] 知乎热榜
-- [x] B站热门搜索
-- [x] 微信24h热文榜
 - [x] 百度实时热榜
+- [x] B站热门搜索（憨憨都在这）
 - [ ] Google Daily Trends
 - [ ] Twitter Trends
 - [ ] Reddit Popular
+- [ ] ~~微信24h热文榜~~ （被鸡汤霸榜了）
 - [ ] ~~微博热榜~~（完全没有用的信息，）
 
 ## 部署

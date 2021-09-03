@@ -72,6 +72,9 @@ rule.minute = minute || 0;
 rule.second = second || 0;
 rule.tz = tz || 'Asia/Shanghai';
 
+// 举例
+// */10 * * * * * 每10秒
+
 const job = schedule.scheduleJob(rule, async function () {
     console.log(new Date(), "task starts")
     await main();

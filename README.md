@@ -41,12 +41,10 @@ yarn git -m *** or npm run git -m *** // *** 代表commit信息
 ## 信息源
 - [x] 知乎热榜
 - [x] 百度实时热榜
-- [x] B站热门搜索（憨憨都在这）
-- [ ] Google Daily Trends
-- [ ] Twitter Trends
-- [ ] Reddit Popular
-- [ ] ~~微信24h热文榜~~ （被鸡汤霸榜了）
-- [ ] ~~微博热榜~~（完全没有用的信息，）
+- [x] B站热门搜索
+- [x] 微博热榜
+- [x] Hacker News
+
 
 ## 部署
 1. 在`git pull`的项目中创建一个config.js如下：

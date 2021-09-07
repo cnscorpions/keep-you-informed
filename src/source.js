@@ -1,4 +1,4 @@
-const { parseZhihu, parseBilibili, parseBaiduHot, parseGoogle } = require("./custom-parse")
+const { parseZhihu, parseBilibili, parseHackerNews, parseGoogle } = require("./parse")
 
 const listOfNewsSource = {
     weibo: {
@@ -63,7 +63,18 @@ const listOfNewsSource = {
     //     },
     //     rule: null,
     //     fn: parseGoogle
-    // }
+    // },
+    HackerNews: {
+        text: "Hacker News",
+        url: "https://api.hackerwebapp.com/news?page=1",
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36'
+        },
+        rule: null,
+        fn: parseHackerNews,
+        start: 0,
+        end: 29
+    }
 }
 
 module.exports = {

@@ -75,7 +75,7 @@ rule.tz = tz || 'Asia/Shanghai';
 // 举例
 // */10 * * * * * 每10秒
 
-const job = schedule.scheduleJob(rule, async function () {
+const job = schedule.scheduleJob('*/10 * * * * *', async function () {
     console.log(new Date(), "task starts")
     await main();
     console.log(new Date(), "task is over")

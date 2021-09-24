@@ -64,10 +64,10 @@ const main = async () => {
     }
 }
 
-// 默认每天北京时间，8点整消息提醒
+// 默认每天北京时间，9点整消息提醒
 const { hour, minute, second, tz } = time;
 const rule = new schedule.RecurrenceRule();
-rule.hour = hour || 8;
+rule.hour = hour || 9;
 rule.minute = minute || 0;
 rule.second = second || 0;
 rule.tz = tz || 'Asia/Shanghai';
@@ -75,7 +75,7 @@ rule.tz = tz || 'Asia/Shanghai';
 // 举例
 // */10 * * * * * 每10秒
 
-const job = schedule.scheduleJob('*/10 * * * * *', async function () {
+const job = schedule.scheduleJob(rule, async function () {
     console.log(new Date(), "task starts")
     await main();
     console.log(new Date(), "task is over")

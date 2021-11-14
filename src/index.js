@@ -64,7 +64,7 @@ const main = async () => {
     }
 }
 
-// 默认每天北京时间，9点整消息提醒
+// 默认每天北京时间，8点整消息提醒
 const { hour, minute, second, tz } = time;
 const rule = new schedule.RecurrenceRule();
 rule.hour = hour || 9;

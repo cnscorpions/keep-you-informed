@@ -5,6 +5,7 @@
     "postgit": "git pull && git push && git status"
   },
   "devDependencies": {
+    "@slack/webhook": "^6.1.0",
     "cheerio": "^1.0.0-rc.6",
     "ding-robot": "^1.0.0",
     "node-fetch": "^2.6.1",

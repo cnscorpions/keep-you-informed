@@ -1,7 +1,7 @@
 const DingRobot = require('ding-robot');
-const { access_token } = require("../config")
+const { DINGDING_WEBHOOK_TOKEN } = require("../config")
 
-const robot = new DingRobot(access_token);
+const robot = new DingRobot(DINGDING_WEBHOOK_TOKEN);
 
 
 const sendText = text => {

@@ -1,7 +1,8 @@
 const fetch = require("node-fetch")
 const cheerio = require('cheerio')
 const schedule = require('node-schedule');
-const { sendMD } = require("./dingding")
+const { sendMsg } = require("./slack")
+// const { sendMD } = require("./dingding")
 const { listOfNewsSource } = require("./source")
 const { time } = require("../config")
 
@@ -57,7 +58,8 @@ const main = async () => {
             newArr.forEach((el, index) => {
                 str +=`${index + 1}. ${el} \n`;
             })
-            sendMD(`${text}消息`, str)
+            sendMsg(`${text}消息`)
+            sendMsg(str)
         }
     } catch (error) {
         console.error(error)
@@ -75,7 +77,7 @@ rule.tz = tz || 'Asia/Shanghai';
 // 举例
 // */10 * * * * * 每10秒
 
-const job = schedule.scheduleJob(rule, async function () {
+const job = schedule.scheduleJob('*/10 * * * * *', async function () {
     console.log(new Date(), "task starts")
     await main();
     console.log(new Date(), "task is over")

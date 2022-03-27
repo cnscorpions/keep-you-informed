@@ -58,7 +58,7 @@ const main = async () => {
             newArr.forEach((el, index) => {
                 str +=`${index + 1}. ${el} \n`;
             })
-            sendMsg(`${text}消息`)
+            // sendMsg(`${text}消息`)
             sendMsg(str)
         }
     } catch (error) {
